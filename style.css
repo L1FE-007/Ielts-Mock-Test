@@ -768,3 +768,16 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
 }
+/* Add to your existing CSS */
+.btn, .cta-button {
+    cursor: pointer;
+    position: relative; /* Ensures proper stacking */
+    z-index: 10; /* Keeps buttons above other elements */
+    user-select: none; /* Prevents text selection when clicking */
+}
+
+/* Make sure nothing is covering buttons */
+.hero-content, .ai-systems, .pricing-cards {
+    position: relative;
+    z-index: 1;
+}
