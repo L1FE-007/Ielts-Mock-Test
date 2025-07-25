@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add animation to system cards when they come into view
-const systemCards = document.querySelectorAll('.system-card');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
