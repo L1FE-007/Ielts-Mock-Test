@@ -99,3 +99,32 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
     window.addEventListener('scroll', animateOnScroll);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get Started Button - Scroll to signup section
+    document.querySelector('.btn-primary').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#signup').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    // Demo Button - Show demo modal
+    document.querySelector('.btn-secondary').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Create demo modal if it doesn't exist
+        if (!document.querySelector('#demo-modal')) {
+            const modal = document.createElement('div');
+            modal.id = 'demo-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>Experience ScoreAI</h3>
+                    <p>This would be your interactive demo content</p>
+                    <button class="close-modal">Close</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        document.querySelector('#demo-modal').style.display = 'block';
+    });
+});
